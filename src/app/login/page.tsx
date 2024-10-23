@@ -15,24 +15,15 @@ export default function Login() {
       setError('Todos los campos son obligatorios');
       return;
     }
+    // Aquí puedes añadir la lógica de autenticación
     console.log({ email, password });
   };
 
   return (
-    <Container
-      component="main"
-      maxWidth="xs"
-      sx={{
-        background: 'linear-gradient(135deg, #6A82FB 0%, #FC5C7D 100%)',
-        borderRadius: '15px',
-        boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
-        padding: '40px',
-        marginTop: '80px',
-        textAlign: 'center',
-      }}
-    >
+    <Container component="main" maxWidth="xs">
       <Box
         sx={{
+          marginTop: 8,
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
@@ -42,34 +33,16 @@ export default function Login() {
         <Image
           src="/images/logo.png" // Ruta a tu logo en la carpeta public
           alt="Logo"
-          width={100}
-          height={100}
-          priority
-          style={{ borderRadius: '50%' }} // Hacemos que el logo sea circular
+          width={100} // Ajusta el ancho
+          height={100} // Ajusta la altura
+          priority // Optimización de carga
         />
-
+        
         {/* Título del formulario */}
-        <Typography
-          component="h1"
-          variant="h4"
-          sx={{
-            color: '#fff',
-            fontWeight: 'bold',
-            marginTop: '20px',
-            fontFamily: 'Roboto, sans-serif',
-          }}
-        >
-          Bienvenido
-        </Typography>
-        <Typography
-          component="p"
-          variant="body1"
-          sx={{ color: '#ddd', marginBottom: '30px' }}
-        >
-          ¡Inicia sesión para continuar!
+        <Typography component="h1" variant="h5" sx={{ mt: 2 }}>
+          Iniciar Sesión
         </Typography>
 
-        {/* Formulario */}
         <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
           <TextField
             margin="normal"
@@ -82,27 +55,6 @@ export default function Login() {
             autoFocus
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            sx={{
-              backgroundColor: 'rgba(255, 255, 255, 0.9)',
-              borderRadius: '10px',
-              '& .MuiInputBase-input': {
-                color: '#333',
-              },
-              '& label.Mui-focused': {
-                color: '#FC5C7D',
-              },
-              '& .MuiOutlinedInput-root': {
-                '& fieldset': {
-                  borderColor: 'rgba(0, 0, 0, 0.1)',
-                },
-                '&:hover fieldset': {
-                  borderColor: '#FC5C7D',
-                },
-                '&.Mui-focused fieldset': {
-                  borderColor: '#FC5C7D',
-                },
-              },
-            }}
           />
           <TextField
             margin="normal"
@@ -115,27 +67,6 @@ export default function Login() {
             autoComplete="current-password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            sx={{
-              backgroundColor: 'rgba(255, 255, 255, 0.9)',
-              borderRadius: '10px',
-              '& .MuiInputBase-input': {
-                color: '#333',
-              },
-              '& label.Mui-focused': {
-                color: '#FC5C7D',
-              },
-              '& .MuiOutlinedInput-root': {
-                '& fieldset': {
-                  borderColor: 'rgba(0, 0, 0, 0.1)',
-                },
-                '&:hover fieldset': {
-                  borderColor: '#FC5C7D',
-                },
-                '&.Mui-focused fieldset': {
-                  borderColor: '#FC5C7D',
-                },
-              },
-            }}
           />
 
           {/* Mensaje de error si falta algún campo */}
@@ -152,14 +83,9 @@ export default function Login() {
             sx={{
               mt: 3,
               mb: 2,
-              background: 'linear-gradient(135deg, #FC5C7D 0%, #6A82FB 100%)',
-              color: '#fff',
-              fontWeight: 'bold',
-              borderRadius: '30px',
-              padding: '10px 20px',
-              transition: 'background 0.3s ease-in-out',
-              '&:hover': {
-                background: 'linear-gradient(135deg, #6A82FB 0%, #FC5C7D 100%)',
+              backgroundColor: '#1976d2', // Color azul de Material-UI
+              ':hover': {
+                backgroundColor: '#115293', // Color más oscuro al pasar el mouse
               },
             }}
           >
