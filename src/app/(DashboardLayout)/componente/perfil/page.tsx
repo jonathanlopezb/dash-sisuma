@@ -1,4 +1,4 @@
-import * as React from 'react';
+'use client'
 import { Box, Container, Card, CardContent, Typography, Divider, Grid, LinearProgress } from '@mui/material';
 import dynamic from 'next/dynamic';
 import { ApexOptions } from 'apexcharts';
