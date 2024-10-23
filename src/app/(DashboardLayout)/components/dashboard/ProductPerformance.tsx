@@ -66,7 +66,7 @@ const ProductPerfomance = () => {
               </TableCell>
               <TableCell align="right">
                 <Typography color="textSecondary" variant="h6">
-                  Pendiente
+                  Saldo Pendiente
                 </Typography>
               </TableCell>
             </TableRow>
