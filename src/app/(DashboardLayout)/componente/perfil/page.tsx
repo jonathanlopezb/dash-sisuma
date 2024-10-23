@@ -163,16 +163,16 @@ export default function Profile() {
                                 <strong>Fecha Término: </strong>{userData.endDate}
                             </Typography>
                             <Typography variant="body1">
-                                <strong>Monto Prestado: </strong>€{userData.loanAmount.toFixed(2)}
+                                <strong>Monto Prestado: </strong>${userData.loanAmount.toFixed(2)}
                             </Typography>
                             <Typography variant="body1">
                                 <strong>Número de Cuotas: </strong>{userData.totalInstallments}
                             </Typography>
                             <Typography variant="body1">
-                                <strong>Valor de la Cuota: </strong>€{userData.installmentValue.toFixed(2)}
+                                <strong>Valor de la Cuota: </strong>${userData.installmentValue.toFixed(2)}
                             </Typography>
                             <Typography variant="body1">
-                                <strong>Valor Pendiente: </strong>€{userData.remainingValue.toFixed(2)}
+                                <strong>Valor Pendiente: </strong>${userData.remainingValue.toFixed(2)}
                             </Typography>
                         </CardContent>
                     </Card>
@@ -190,16 +190,16 @@ export default function Profile() {
                                 <strong>Cuotas Saldadas: </strong>{userData.installmentsPaid} de {userData.totalInstallments}
                             </Typography>
                             <Typography variant="body1">
-                                <strong>Valor Saldado: </strong>€{userData.paidValue.toFixed(2)}
+                                <strong>Valor Saldado: </strong>${userData.paidValue.toFixed(2)}
                             </Typography>
                             <Typography variant="body1">
-                                <strong>Saldo Pendiente: </strong>€{userData.creditBalance.toFixed(2)}
+                                <strong>Saldo Pendiente: </strong>${userData.creditBalance.toFixed(2)}
                             </Typography>
                             <Typography variant="body1">
-                                <strong>Retanqueo: </strong>€{userData.reloan.toFixed(2)}
+                                <strong>Retanqueo: </strong>${userData.reloan.toFixed(2)}
                             </Typography>
                             <Typography variant="body1">
-                                <strong>Total Deuda: </strong>€{userData.totalDebt.toFixed(2)}
+                                <strong>Total Deuda: </strong>${userData.totalDebt.toFixed(2)}
                             </Typography>
                             {/* Barra de progreso para cuotas */}
                             <LinearProgress
@@ -252,9 +252,9 @@ export default function Profile() {
                                     <TableRow key={index}>
                                         <TableCell>{credit.startDate}</TableCell>
                                         <TableCell>{credit.endDate}</TableCell>
-                                        <TableCell>€{credit.loanAmount.toFixed(2)}</TableCell>
+                                        <TableCell>${credit.loanAmount.toFixed(2)}</TableCell>
                                         <TableCell>{credit.installments}</TableCell>
-                                        <TableCell>€{credit.paidAmount.toFixed(2)}</TableCell>
+                                        <TableCell>${credit.paidAmount.toFixed(2)}</TableCell>
                                         <TableCell>{credit.status}</TableCell>
                                     </TableRow>
                                 ))}
