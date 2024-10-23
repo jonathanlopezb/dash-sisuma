@@ -142,7 +142,7 @@ const Profile = () => {
 
         <Box pt={0}>
 
-          <List>
+          {/* <List>
             <ListItemButton component="a" href="#">
               <ListItemText primary="Edit Profile" />
             </ListItemButton>
@@ -155,7 +155,7 @@ const Profile = () => {
             <ListItemButton component="a" href="#">
               <ListItemText primary="My Settings" />
             </ListItemButton>
-          </List>
+          </List> */}
 
         </Box>
         <Divider />
