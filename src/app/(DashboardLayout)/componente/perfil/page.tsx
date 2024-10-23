@@ -54,10 +54,6 @@ interface UserData {
     creditHistory: CreditHistory[];  // Agregamos el historial de créditos
 }
 
-export const metadata = {
-    title: "Perfil de Usuario - Juan Pérez",
-    description: "Visualiza el perfil de Juan Pérez, incluyendo su historial de créditos y comportamiento de pago.",
-};
 
 export default function Profile() {
     // Datos ficticios del usuario y su comportamiento de crédito
