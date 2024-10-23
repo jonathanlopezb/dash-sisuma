@@ -18,6 +18,7 @@ export default function Login() {
     // Aquí puedes añadir la lógica de autenticación
     console.log({ cedula, password });
   };
+  
 
   return (
     <Container component="main" maxWidth="xs">

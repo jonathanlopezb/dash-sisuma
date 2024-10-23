@@ -2,6 +2,7 @@
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Box, Container, Card, CardContent, Typography, Divider, Grid, LinearProgress } from '@mui/material';
 import dynamic from 'next/dynamic';
 import { ApexOptions } from 'apexcharts';
+import { Metadata } from "next";
 
 // Cargamos ApexCharts dinámicamente porque Next.js hace SSR y ApexCharts depende del DOM
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
@@ -52,6 +53,11 @@ interface UserData {
     totalDebt: number;
     creditHistory: CreditHistory[];  // Agregamos el historial de créditos
 }
+
+export const metadata: Metadata = {
+    title: "Perfil de Usuario - Juan Pérez",
+    description: "Visualiza el perfil de Juan Pérez, incluyendo su historial de créditos y comportamiento de pago.",
+  };
 
 export default function Profile() {
     // Datos ficticios del usuario y su comportamiento de crédito
@@ -124,6 +130,8 @@ export default function Profile() {
             data: userData.paymentHistory,
         },
     ];
+
+    
 
     return (
         <Container component="main" sx={{ mt: 4 }}>
