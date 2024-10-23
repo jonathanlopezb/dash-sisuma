@@ -13,9 +13,9 @@ const Menuitems = [
   },
   {
     id: uniqueId(),
-    title: "Buttons",
+    title: "Agregar Cliente",
     icon: IconCircleDot,
-    href: "/ui-components/buttons",
+    href: "/ui-components/cliente",
   },
   // {
   //   id: uniqueId(),
