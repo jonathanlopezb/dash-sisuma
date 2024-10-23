@@ -62,7 +62,7 @@ export default function Profile() {
         creditBalance: 5000,
         installmentsPaid: 10,
         totalInstallments: 12,
-        paymentHistory: [500, 600, 700, 400],
+        paymentHistory: [2000, 2000, 2000, 1000],
         startDate: '2023-01-01',
         endDate: '2024-01-01',
         loanAmount: 12000,
