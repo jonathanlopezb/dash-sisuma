@@ -10,7 +10,6 @@ export const metadata: Metadata = {
   keywords: ["usuario", "perfil", "crédito", "saldo pendiente", "historial de créditos", "gestión financiera"],
   authors: [{ name: "Tu Nombre o Compañía" }],
   viewport: "width=device-width, initial-scale=1.0",
-  charset: "UTF-8",
 };
 
 export default function RootLayout({
