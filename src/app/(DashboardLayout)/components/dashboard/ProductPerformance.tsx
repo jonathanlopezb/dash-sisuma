@@ -74,14 +74,15 @@ const ProductPerfomance = () => {
           </TableHead>
           <TableBody>
             {products.map((product) => (
-              <Link href="/componente/perfil" underline="none" key={product.name}>
-                <TableRow >
-                  <TableCell>
-                    <Typography fontSize="15px" fontWeight={500}>
-                      {product.id}
-                    </Typography>
-                  </TableCell>
-                  <TableCell>
+              <TableRow >
+                <TableCell>
+                  <Typography fontSize="15px" fontWeight={500}>
+                    {product.id}
+                  </Typography>
+                </TableCell>
+                <TableCell>
+                  <Link href="/componente/perfil" underline="none" key={product.name}>
+
                     <Box display="flex" alignItems="center">
                       <Box>
                         <Typography variant="h6" fontWeight={600}>
@@ -92,29 +93,30 @@ const ProductPerfomance = () => {
                         </Typography>
                       </Box>
                     </Box>
-                  </TableCell>
-                  <TableCell>
-                    <Typography color="textSecondary" variant="h6">
-                      {product.pname}
-                    </Typography>
-                  </TableCell>
-                  <TableCell>
-                    <Chip
-                      sx={{
-                        pl: "4px",
-                        pr: "4px",
-                        backgroundColor: product.pbg,
-                        color: "#fff",
-                      }}
-                      size="small"
-                      label={product.priority}
-                    ></Chip>
-                  </TableCell>
-                  <TableCell align="right">
-                    <Typography variant="h6">${product.budget}</Typography>
-                  </TableCell>
-                </TableRow>
-              </Link>
+                  </Link>
+
+                </TableCell>
+                <TableCell>
+                  <Typography color="textSecondary" variant="h6">
+                    {product.pname}
+                  </Typography>
+                </TableCell>
+                <TableCell>
+                  <Chip
+                    sx={{
+                      pl: "4px",
+                      pr: "4px",
+                      backgroundColor: product.pbg,
+                      color: "#fff",
+                    }}
+                    size="small"
+                    label={product.priority}
+                  ></Chip>
+                </TableCell>
+                <TableCell align="right">
+                  <Typography variant="h6">${product.budget}</Typography>
+                </TableCell>
+              </TableRow>
             ))}
           </TableBody>
         </Table>
