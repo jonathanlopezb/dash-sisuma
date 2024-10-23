@@ -35,13 +35,13 @@ const Forms = () => {
             <Stack spacing={3}>
               <TextField
                 id="name-basic"
-                label="Name"
+                label="Nombre"
                 variant="outlined"
               />
-              <TextField id="email-basic" label="Email" variant="outlined" />
+              <TextField id="celular-basic" label="Celular" variant="outlined" />
               <TextField
-                id="pass-basic"
-                label="cedula"
+                id="cedula-basic"
+                label="Cedula"
                 variant="outlined"
               />
 
