@@ -1,25 +1,36 @@
-// pages/profile.js
 import * as React from 'react';
 import { Box, Container, Card, CardContent, Typography, Divider, Grid, LinearProgress } from '@mui/material';
 import dynamic from 'next/dynamic';
+import { ApexOptions } from 'apexcharts';
 
 // Cargamos ApexCharts dinámicamente porque Next.js hace SSR y ApexCharts depende del DOM
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
 
+// Definimos los tipos para los datos del usuario
+interface UserData {
+  name: string;
+  email: string;
+  phone: string;
+  creditBalance: number;
+  installmentsPaid: number;
+  totalInstallments: number;
+  paymentHistory: number[];
+}
+
 export default function Profile() {
   // Datos ficticios del usuario y su comportamiento de crédito
-  const userData = {
+  const userData: UserData = {
     name: 'Juan Pérez',
     email: 'juan.perez@example.com',
     phone: '+34 600 123 456',
-    creditBalance: 5000, // Saldo pendiente
-    installmentsPaid: 10, // Cuotas saldadas
-    totalInstallments: 12, // Total de cuotas
-    paymentHistory: [500, 600, 700, 400, 650, 700, 800, 550, 900, 1000], // Historial de pagos
+    creditBalance: 5000,
+    installmentsPaid: 10,
+    totalInstallments: 12,
+    paymentHistory: [500, 600, 700, 400, 650, 700, 800, 550, 900, 1000],
   };
 
-  // Configuración del gráfico de comportamiento de pagos
-  const chartOptions = {
+  // Configuración del gráfico de comportamiento de pagos (ApexOptions es el tipo de opciones de ApexCharts)
+  const chartOptions: ApexOptions = {
     chart: {
       id: 'payment-history-chart',
       toolbar: {
@@ -44,6 +55,7 @@ export default function Profile() {
     },
   };
 
+  // Series de datos para el gráfico
   const chartSeries = [
     {
       name: 'Monto Pagado (€)',
