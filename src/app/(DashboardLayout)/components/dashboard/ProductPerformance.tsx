@@ -9,6 +9,7 @@ import {
   TableRow,
   Chip,
   TableContainer,
+  Link,
 } from "@mui/material";
 import BaseCard from "../shared/DashboardCard";
 
@@ -73,45 +74,47 @@ const ProductPerfomance = () => {
           </TableHead>
           <TableBody>
             {products.map((product) => (
-              <TableRow key={product.name}>
-                <TableCell>
-                  <Typography fontSize="15px" fontWeight={500}>
-                    {product.id}
-                  </Typography>
-                </TableCell>
-                <TableCell>
-                  <Box display="flex" alignItems="center">
-                    <Box>
-                      <Typography variant="h6" fontWeight={600}>
-                        {product.name}
-                      </Typography>
-                      <Typography color="textSecondary" fontSize="13px">
-                        {product.post}
-                      </Typography>
+              <Link href="/componente/perfil" underline="none">
+                <TableRow key={product.name}>
+                  <TableCell>
+                    <Typography fontSize="15px" fontWeight={500}>
+                      {product.id}
+                    </Typography>
+                  </TableCell>
+                  <TableCell>
+                    <Box display="flex" alignItems="center">
+                      <Box>
+                        <Typography variant="h6" fontWeight={600}>
+                          {product.name}
+                        </Typography>
+                        <Typography color="textSecondary" fontSize="13px">
+                          {product.post}
+                        </Typography>
+                      </Box>
                     </Box>
-                  </Box>
-                </TableCell>
-                <TableCell>
-                  <Typography color="textSecondary" variant="h6">
-                    {product.pname}
-                  </Typography>
-                </TableCell>
-                <TableCell>
-                  <Chip
-                    sx={{
-                      pl: "4px",
-                      pr: "4px",
-                      backgroundColor: product.pbg,
-                      color: "#fff",
-                    }}
-                    size="small"
-                    label={product.priority}
-                  ></Chip>
-                </TableCell>
-                <TableCell align="right">
-                  <Typography variant="h6">${product.budget}</Typography>
-                </TableCell>
-              </TableRow>
+                  </TableCell>
+                  <TableCell>
+                    <Typography color="textSecondary" variant="h6">
+                      {product.pname}
+                    </Typography>
+                  </TableCell>
+                  <TableCell>
+                    <Chip
+                      sx={{
+                        pl: "4px",
+                        pr: "4px",
+                        backgroundColor: product.pbg,
+                        color: "#fff",
+                      }}
+                      size="small"
+                      label={product.priority}
+                    ></Chip>
+                  </TableCell>
+                  <TableCell align="right">
+                    <Typography variant="h6">${product.budget}</Typography>
+                  </TableCell>
+                </TableRow>
+              </Link>
             ))}
           </TableBody>
         </Table>
