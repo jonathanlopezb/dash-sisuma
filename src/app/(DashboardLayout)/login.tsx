@@ -1,4 +1,4 @@
-// pages/login.js
+'use client'
 import * as React from 'react';
 import { TextField, Button, Box, Typography, Container } from '@mui/material';
 import { useState } from 'react';
