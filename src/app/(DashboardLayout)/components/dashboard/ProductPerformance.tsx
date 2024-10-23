@@ -74,8 +74,8 @@ const ProductPerfomance = () => {
           </TableHead>
           <TableBody>
             {products.map((product) => (
-              <TableRow key={product.name}>
-                <Link href="/componente/perfil" underline="none">
+              <Link href="/componente/perfil" underline="none" key={product.name}>
+                <TableRow >
                   <TableCell>
                     <Typography fontSize="15px" fontWeight={500}>
                       {product.id}
@@ -113,8 +113,8 @@ const ProductPerfomance = () => {
                   <TableCell align="right">
                     <Typography variant="h6">${product.budget}</Typography>
                   </TableCell>
-                </Link>
-              </TableRow>
+                </TableRow>
+              </Link>
             ))}
           </TableBody>
         </Table>
