@@ -74,14 +74,14 @@ const ProductPerfomance = () => {
           </TableHead>
           <TableBody>
             {products.map((product) => (
-              <TableRow >
+              <TableRow key={product.name}>
                 <TableCell>
                   <Typography fontSize="15px" fontWeight={500}>
                     {product.id}
                   </Typography>
                 </TableCell>
                 <TableCell>
-                  <Link href="/componente/perfil" underline="none" key={product.name}>
+                  <Link href="/componente/perfil" underline="none" >
 
                     <Box display="flex" alignItems="center">
                       <Box>
