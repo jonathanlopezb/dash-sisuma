@@ -53,7 +53,7 @@ const products = [
 
 const ProductPerfomance = () => {
   return (
-    <BaseCard title="Product Perfomance">
+    <BaseCard title="Clientes">
       <TableContainer
         sx={{
           width: {

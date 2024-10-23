@@ -12,7 +12,7 @@ const LinkStyled = styled(Link)(() => ({
 const Logo = () => {
   return (
     <LinkStyled href="/">
-      <h1>SISUMA+</h1>
+      {/* Logo */}
     </LinkStyled>
   );
 };
