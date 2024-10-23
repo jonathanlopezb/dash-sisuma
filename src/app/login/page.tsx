@@ -31,7 +31,7 @@ export default function Login() {
       >
         {/* Logo */}
         <Image
-          src="/images/logo.png" // Ruta a tu logo en la carpeta public
+          src="/images/logos/logo.png" // Ruta a tu logo en la carpeta public
           alt="Logo"
           width={100} // Ajusta el ancho
           height={100} // Ajusta la altura
