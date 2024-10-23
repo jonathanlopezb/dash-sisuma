@@ -18,9 +18,9 @@ const products = [
     name: "Deymer Garavito",
     post: "Viernes",
     pname: "Armando Gonzalez",
-    priority: "Retanqueo",
+    priority: "Si",
     pbg: "success.main",
-    budget: "2.4",
+    budget: "200.000",
   },
 ];
 
@@ -109,7 +109,7 @@ const ProductPerfomance = () => {
                   ></Chip>
                 </TableCell>
                 <TableCell align="right">
-                  <Typography variant="h6">${product.budget}k</Typography>
+                  <Typography variant="h6">${product.budget}</Typography>
                 </TableCell>
               </TableRow>
             ))}
