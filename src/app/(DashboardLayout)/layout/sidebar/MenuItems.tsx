@@ -15,7 +15,7 @@ const Menuitems = [
     id: uniqueId(),
     title: "Agregar Cliente",
     icon: IconCircleDot,
-    href: "/ui-components/cliente",
+    href: "/componente/cliente",
   },
   // {
   //   id: uniqueId(),
