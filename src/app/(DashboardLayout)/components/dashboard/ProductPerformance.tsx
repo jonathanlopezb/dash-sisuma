@@ -81,25 +81,24 @@ const ProductPerfomance = () => {
                   </Typography>
                 </TableCell>
                 <TableCell>
-                  <Link href="/componente/perfil" underline="none" >
-
-                    <Box display="flex" alignItems="center">
-                      <Box>
-                        <Typography variant="h6" fontWeight={600}>
-                          {product.name}
-                        </Typography>
-                        <Typography color="textSecondary" fontSize="13px">
-                          {product.post}
-                        </Typography>
-                      </Box>
+                  <Box display="flex" alignItems="center">
+                    <Box>
+                      <Typography variant="h6" fontWeight={600}>
+                        {product.name}
+                      </Typography>
+                      <Typography color="textSecondary" fontSize="13px">
+                        {product.post}
+                      </Typography>
                     </Box>
-                  </Link>
+                  </Box>
 
                 </TableCell>
                 <TableCell>
-                  <Typography color="textSecondary" variant="h6">
-                    {product.pname}
-                  </Typography>
+                  <Link href="/componente/perfil" underline="none" >
+                    <Typography color="textSecondary" variant="h6">
+                      {product.pname}
+                    </Typography>
+                  </Link>
                 </TableCell>
                 <TableCell>
                   <Chip
