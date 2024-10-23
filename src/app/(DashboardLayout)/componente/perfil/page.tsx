@@ -62,7 +62,7 @@ export default function Profile() {
         creditBalance: 5000,
         installmentsPaid: 10,
         totalInstallments: 12,
-        paymentHistory: [500, 600, 700, 400, 650, 700, 800, 550, 900, 1000],
+        paymentHistory: [500, 600, 700, 400],
         startDate: '2023-01-01',
         endDate: '2024-01-01',
         loanAmount: 12000,
@@ -101,7 +101,7 @@ export default function Profile() {
             },
         },
         xaxis: {
-            categories: ['1', '2', '3', '4', '5'],
+            categories: ['cuota 1', 'cuota 2', 'cuota 3', 'cuota 4'],
         },
         stroke: {
             curve: 'smooth',
