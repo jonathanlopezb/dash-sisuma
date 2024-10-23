@@ -15,6 +15,14 @@ interface UserData {
   installmentsPaid: number;
   totalInstallments: number;
   paymentHistory: number[];
+  startDate: string;
+  endDate: string;
+  loanAmount: number;
+  installmentValue: number;
+  remainingValue: number;
+  paidValue: number;
+  reloan: number;
+  totalDebt: number;
 }
 
 export default function Profile() {
@@ -27,18 +35,26 @@ export default function Profile() {
     installmentsPaid: 10,
     totalInstallments: 12,
     paymentHistory: [500, 600, 700, 400, 650, 700, 800, 550, 900, 1000],
+    startDate: '2023-01-01',
+    endDate: '2024-01-01',
+    loanAmount: 12000,
+    installmentValue: 1000,
+    remainingValue: 5000,
+    paidValue: 7000,
+    reloan: 500,
+    totalDebt: 12500,
   };
 
-  // Configuración del gráfico de comportamiento de pagos (ApexOptions es el tipo de opciones de ApexCharts)
+  // Configuración del gráfico de comportamiento de pagos
   const chartOptions: ApexOptions = {
     chart: {
       id: 'payment-history-chart',
       toolbar: {
-        show: false, // Ocultamos el toolbar por estética
+        show: false,
       },
     },
     xaxis: {
-      categories: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre'],
+      categories: ['1', '2', '3', '4', '5'],
     },
     stroke: {
       curve: 'smooth',
@@ -55,7 +71,6 @@ export default function Profile() {
     },
   };
 
-  // Series de datos para el gráfico
   const chartSeries = [
     {
       name: 'Monto Pagado (€)',
@@ -86,33 +101,59 @@ export default function Profile() {
 
       {/* Sección de Información Financiera */}
       <Grid container spacing={4}>
-        {/* Saldo pendiente */}
+        {/* Información del crédito */}
         <Grid item xs={12} md={6}>
           <Card sx={{ boxShadow: 3 }}>
             <CardContent>
               <Typography variant="h5" component="div" gutterBottom>
-                Saldo Pendiente
+                Información del Crédito
               </Typography>
               <Divider sx={{ mb: 2 }} />
-              <Typography variant="h4" color="error">
-                €{userData.creditBalance.toFixed(2)}
+              <Typography variant="body1">
+                <strong>Fecha Inicio: </strong>{userData.startDate}
+              </Typography>
+              <Typography variant="body1">
+                <strong>Fecha Término: </strong>{userData.endDate}
+              </Typography>
+              <Typography variant="body1">
+                <strong>Monto Prestado: </strong>€{userData.loanAmount.toFixed(2)}
+              </Typography>
+              <Typography variant="body1">
+                <strong>Número de Cuotas: </strong>{userData.totalInstallments}
+              </Typography>
+              <Typography variant="body1">
+                <strong>Valor de la Cuota: </strong>€{userData.installmentValue.toFixed(2)}
+              </Typography>
+              <Typography variant="body1">
+                <strong>Valor Pendiente: </strong>€{userData.remainingValue.toFixed(2)}
               </Typography>
             </CardContent>
           </Card>
         </Grid>
 
-        {/* Cuotas saldadas */}
+        {/* Detalles de Pagos */}
         <Grid item xs={12} md={6}>
           <Card sx={{ boxShadow: 3 }}>
             <CardContent>
               <Typography variant="h5" component="div" gutterBottom>
-                Cuotas Saldadas
+                Detalles de Pagos
               </Typography>
               <Divider sx={{ mb: 2 }} />
               <Typography variant="body1">
-                {userData.installmentsPaid} de {userData.totalInstallments} cuotas pagadas
+                <strong>Cuotas Saldadas: </strong>{userData.installmentsPaid} de {userData.totalInstallments}
               </Typography>
-
+              <Typography variant="body1">
+                <strong>Valor Saldado: </strong>€{userData.paidValue.toFixed(2)}
+              </Typography>
+              <Typography variant="body1">
+                <strong>Saldo Pendiente: </strong>€{userData.creditBalance.toFixed(2)}
+              </Typography>
+              <Typography variant="body1">
+                <strong>Retanqueo: </strong>€{userData.reloan.toFixed(2)}
+              </Typography>
+              <Typography variant="body1">
+                <strong>Total Deuda: </strong>€{userData.totalDebt.toFixed(2)}
+              </Typography>
               {/* Barra de progreso para cuotas */}
               <LinearProgress
                 variant="determinate"
@@ -131,7 +172,6 @@ export default function Profile() {
             Comportamiento de Pago
           </Typography>
           <Divider sx={{ mb: 2 }} />
-          {/* Gráfico de ApexCharts */}
           <Box sx={{ height: '300px' }}>
             <Chart
               options={chartOptions}
