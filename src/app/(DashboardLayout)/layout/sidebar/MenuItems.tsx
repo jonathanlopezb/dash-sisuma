@@ -7,16 +7,16 @@ import { uniqueId } from "lodash";
 const Menuitems = [
   {
     id: uniqueId(),
-    title: "Dashboard",
+    title: "Panel de Control",
     icon: IconHome,
     href: "/",
   },
-  // {
-  //   id: uniqueId(),
-  //   title: "Buttons",
-  //   icon: IconCircleDot,
-  //   href: "/ui-components/buttons",
-  // },
+  {
+    id: uniqueId(),
+    title: "Buttons",
+    icon: IconCircleDot,
+    href: "/ui-components/buttons",
+  },
   // {
   //   id: uniqueId(),
   //   title: "Forms",

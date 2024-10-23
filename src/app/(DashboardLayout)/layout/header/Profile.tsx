@@ -106,7 +106,6 @@ const Profile = () => {
             fontWeight="400"
             sx={{ ml: 1 }}
           >
-            Hi,
           </Typography>
           <Typography
             variant="h5"
@@ -115,7 +114,7 @@ const Profile = () => {
               ml: 1,
             }}
           >
-            Julia
+            Victor Wong
           </Typography>
           <IconChevronDown width="20" height="20" />
         </Box>
