@@ -224,7 +224,7 @@ export default function Profile() {
                             options={chartOptions}
                             series={chartSeries}
                             type="line"
-                            height="300"
+                            height="1000"
                         />
                     </Box>
                 </CardContent>
