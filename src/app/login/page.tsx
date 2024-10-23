@@ -5,18 +5,18 @@ import { useState } from 'react';
 import Image from 'next/image';
 
 export default function Login() {
-  const [email, setEmail] = useState('');
+  const [cedula, setcedula] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    if (!email || !password) {
+    if (!cedula || !password) {
       setError('Todos los campos son obligatorios');
       return;
     }
     // Aquí puedes añadir la lógica de autenticación
-    console.log({ email, password });
+    console.log({ cedula, password });
   };
 
   return (
@@ -33,28 +33,23 @@ export default function Login() {
         <Image
           src="/images/logos/logo.png" // Ruta a tu logo en la carpeta public
           alt="Logo"
-          width={100} // Ajusta el ancho
-          height={100} // Ajusta la altura
+          width={150} // Ajusta el ancho
+          height={150} // Ajusta la altura
           priority // Optimización de carga
         />
-        
-        {/* Título del formulario */}
-        <Typography component="h1" variant="h5" sx={{ mt: 2 }}>
-          Iniciar Sesión
-        </Typography>
 
         <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
           <TextField
             margin="normal"
             required
             fullWidth
-            id="email"
-            label="Correo Electrónico"
-            name="email"
-            autoComplete="email"
+            id="cedula"
+            label="Cedula"
+            name="cedula"
+            autoComplete="cedula"
             autoFocus
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={cedula}
+            onChange={(e) => setcedula(e.target.value)}
           />
           <TextField
             margin="normal"
